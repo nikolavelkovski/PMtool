@@ -8,8 +8,14 @@ Project-Menagment-Tool
 е да креира,ажурира и брише свој проект,истотака може да креира,брише и ажурира таск на проект
 
 Стартување:
+back-end се наоѓа во фолдеро ppmtool-backend 
+front-end се наоѓа во фолдерот ppmtool-frontend
 
+back-end може да се отвори со inteliji со вметнување на датотеките во inteliji  и кликнување на buid project
+front-end може да се стартува со  Visual studio code ,со командата npm start во терминал.
 
+back-end е изработен во java spring-boot
+front-end е изработен во react
 
  
  
