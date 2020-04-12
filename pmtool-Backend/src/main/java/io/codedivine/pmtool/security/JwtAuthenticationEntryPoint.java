@@ -1,4 +1,4 @@
-package security;
+package io.codedivine.pmtool.security;
 
 import com.google.gson.Gson;
 import io.codedivine.pmtool.exception.InvalidLoginResponse;

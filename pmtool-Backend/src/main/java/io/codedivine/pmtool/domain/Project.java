@@ -1,6 +1,7 @@
 package io.codedivine.pmtool.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -29,13 +30,44 @@ public class Project {
         private Date start_date;
 
         @JsonFormat(pattern = "yyyy-mm-dd")
+        private Date end_date;
+
+        @JsonFormat(pattern = "yyyy-mm-dd")
         @Column(updatable = false)
         private Date created_At;
 
         @JsonFormat(pattern="yyyy-mm-dd")
         private Date updated_At;
         //Before creating the entity  update the date attribute
-        public Project(){
+
+
+        @OneToOne(fetch = FetchType.EAGER, cascade =CascadeType.ALL,mappedBy = "project")
+        @JsonIgnore
+        private Backlog backlog;
+
+        @ManyToOne(fetch = FetchType.LAZY)
+        @JsonIgnore
+        private User user;
+
+        private String projectLeader; //leder na proektot koj go naprail
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getProjectLeader() {
+        return projectLeader;
+    }
+
+    public void setProjectLeader(String projectLeader) {
+        this.projectLeader = projectLeader;
+    }
+
+    public Project(){
 
         }
         //Getter and setters
@@ -79,7 +111,15 @@ public class Project {
             this.start_date = start_date;
         }
 
-        public Date getCreated_At() {
+    public Date getEnd_date() {
+        return end_date;
+    }
+
+    public void setEnd_date(Date end_date) {
+        this.end_date = end_date;
+    }
+
+    public Date getCreated_At() {
             return created_At;
         }
 
@@ -95,13 +135,21 @@ public class Project {
             this.updated_At = updated_At;
         }
 
+    public Backlog getBacklog() {
+        return backlog;
+    }
+
+    public void setBacklog(Backlog backlog) {
+        this.backlog = backlog;
+    }
+
     @PrePersist
         protected void onCreate(){
             this.created_At = new Date();
         }
     //Before updating the entity  update the date attribute
-        @PreUpdate
-        protected void onUpdate(){
-            this.updated_At = new Date();
-        }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updated_At = new Date();
+    }
 }
