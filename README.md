@@ -1,9 +1,6 @@
 # PMtool
 Project-Menagment tool
-dsadasdasdasdsadsad
-asd
-asdasd
-a
-sd
-as
-das
+
+ Project-Menagment tool it's a tool made for every person who works with projects, it displays all your projects and project tasks within a specific project.
+ 
+ 
