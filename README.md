@@ -1,4 +1,11 @@
 # PMtool
+======EN========
+Project-Menagment-Tool
+
+Academy Project for web progamming subject:
+FrontEnd : React-js
+BackEnd : Java
+======MK========
 Project-Menagment-Tool
 Студент: Никола Велковски 155054
 Семинарска по предметот Веб Програмирање Факултет за информатички науки и компјутерско инжинерство
